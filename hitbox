@@ -1,7 +1,7 @@
 --Hitbox Extender
 --Change 20 to your desired size
 --Change the white to your desired color (I recommend white)
-_G.HeadSize = 20
+_G.HeadSize = 15
 _G.Disabled = true
 
 game:GetService('RunService').RenderStepped:connect(function()
