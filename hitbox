@@ -1,25 +1,21 @@
-_G.HeadSize = 16
+--Hitbox Extender
+--Change 20 to your desired size
+--Change the white to your desired color (I recommend white)
+_G.HeadSize = 20
 _G.Disabled = true
 
-local rainbowSpeed = 0.01 -- Adjust this value to control the speed of the color cycle
-
 game:GetService('RunService').RenderStepped:connect(function()
-    if _G.Disabled then
-        for i, v in next, game:GetService('Players'):GetPlayers() do
-            if v.Name ~= game:GetService('Players').LocalPlayer.Name then
-                pcall(function()
-                    v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize, _G.HeadSize, _G.HeadSize)
-                    v.Character.HumanoidRootPart.Transparency = 0.7
-
-                    -- Generate a rainbow color using HSV
-                    local hue = (tick() * rainbowSpeed) % 1
-                    local rainbowColor = Color3.fromHSV(hue, 1, 1)
-
-                    v.Character.HumanoidRootPart.BrickColor = BrickColor.new(rainbowColor)
-                    v.Character.HumanoidRootPart.Material = "ForceField"
-                    v.Character.HumanoidRootPart.CanCollide = false
-                end)
-            end
-        end
-    end
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really white")
+v.Character.HumanoidRootPart.Material = "ForceField"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
 end)
