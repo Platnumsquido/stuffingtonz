@@ -1,0 +1,10 @@
+-- Check if the object exists in the workspace
+local doors = game:GetService("Workspace"):FindFirstChild("Doors")
+
+if doors then
+    -- Delete the object
+    doors:Destroy()
+    print("Doors object has been deleted from the workspace.")
+else
+    print("Doors object not found in the workspace.")
+end
